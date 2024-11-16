@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dino Board</title>
+    <link rel="stylesheet" href="board.css">
+</head>
+<body>
+    <h2>LeaderBoard</h2>
+    <div id="board-container"></div>
+    <div id="list" class="list"></div>
+    <button onclick="window.location.href='user.html'">Back to Start</button>
+    <button id="clearstorage">Clear Data</button>
+
+
+    <script>
+        const leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
+        const container = document.getElementById('board-container');
+
+        if (leaderboard.length === 0) {
+            container.innerHTML = '<p class="no-scores">No scores yet!</p>';
+        } else {
+            leaderboard.forEach((entry, index) => {
+                const div = document.createElement('div');
+                div.classList.add('entry');
+                div.innerText = `${index + 1}. ${entry.name} - ${entry.score}`;
+                container.appendChild(div);
+            });
+        }
+         
+        document.getElementById('clearstorage').addEventListener('click',function(){
+            localStorage.clear();
+        })
+
+
+
+    </script>
+</body>
+</html>

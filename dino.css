@@ -1,0 +1,171 @@
+
+/*Dino Styling*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background:#000;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* samuraai Container */
+  #cactus-container {
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    height: 50px;
+    width: 800px;
+    overflow: hidden;
+  }
+  
+
+/* Game Container */
+.game-container {
+  position: relative;
+  width: 800px;
+  height: 300px;
+  border: 2px solid black;
+  margin: 50px auto;
+  overflow: hidden;
+  background-image: url("DINO IMG/sky.png");
+}
+
+/* Scoreboard  */
+#score {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  z-index: 10;
+}
+
+/* Dino */
+#dino {
+  position: absolute;
+  bottom: 10px;
+  left: 50px;
+  width: 50px;
+  height: 50px;
+  transition: bottom 0.1s;
+}
+
+/* Samurai */
+.cactus {
+  position: absolute;
+  bottom: 0;
+  width: 30px;
+  height: 50px;
+  animation: moveCactus 2s linear infinite;
+}
+
+
+/* Game Over Screen  */
+#game-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  text-align: center;
+  
+}
+
+#restart-btn {
+ position: absolute;
+ top: 60%;
+ left: 50%;
+ transform: translate(-50%,-50%);
+ background: none;
+ border: none;
+ cursor: pointer;
+ padding: 0;
+  
+}
+
+
+#restartg {
+  width: 120px;
+  height: 90px;
+}
+
+/* Animations */
+
+#ground {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:30px;
+  background-image: url('DINO IMG/ground.png');
+  background-repeat: repeat-x;
+  animation: moveGround 4s linear infinite;
+  z-index: 1;
+}
+
+@keyframes moveGround {
+  from {
+    background-position-x: 0;
+
+  } 
+  to {
+    background-position-x: 100%;
+  } 
+}
+
+#ground.paused {
+  background-repeat:no-repeat;
+  animation-play-state: paused;
+}
+
+@keyframes moveCactus {
+  from {
+    right: -50px;
+  }
+  to {
+    right: 850px;
+  }
+}
+.bird {
+  position: absolute;
+  width: 40px;
+  z-index: 2; 
+  animation: fly 3s linear infinite;
+}
+
+@keyframes fly {
+  from {
+    right: -50px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+#leaderboardButton {
+    background-color: #008cba;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    
+}
+button:hover{
+  background-color: #005f6b;
+
+}
+button:active{
+  background-color: #00444f;
+}

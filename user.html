@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dino User</title>
+    <link rel="stylesheet" href="user.css">
+</head>
+<body>
+    <div id="name">
+        <h2>Enter your username</h2>
+        <input type="text" id="userName" placeholder="Type your username" style="border-radius: 4px;">
+        <button id="startgame">Start Game</button>
+        
+      </div>
+    
+      <script>
+        document.getElementById('startgame').addEventListener('click',function(){
+            const name = document.getElementById('userName').value;
+            console.log(34)
+            if(name) {
+            localStorage.setItem('userName', name);
+            location.assign('dino.html');           
+
+            }
+        })
+      </script>
+
+
+
+</body>
+</html>
