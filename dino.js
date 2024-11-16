@@ -21,11 +21,11 @@ let velocity = 0;
 
 //  samurai and dragon imgs
 const cactusTypes = [
-  { src: 'DINO IMG/ezgif-4-5d3febca02.gif', probability: 0.6 },
-  { src: 'DINO IMG/ezgif-4-1f82bc2457.gif', probability: 0.3 },
-  { src: 'DINO IMG/ragna-bloodedge.gif', probability: 0.2 }
+  { src: './DINO IMG/ezgif-4-5d3febca02.gif', probability: 0.6 },
+  { src: './DINO IMG/ezgif-4-1f82bc2457.gif', probability: 0.3 },
+  { src: './DINO IMG/ragna-bloodedge.gif', probability: 0.2 }
 ];
-const birdImg = 'DINO IMG/flying.gif';
+const birdImg = './DINO IMG/flying.gif';
 // JUMP logic
 function jump() {
   if (!gameRunning || isJumping) return;
@@ -53,10 +53,10 @@ function jump() {
 function duck() {
   if (!gameRunning || isDucking || isJumping) return;
   isDucking = true;
-  dino.src = 'DINO IMG/duck.gif';
+  dino.src = './DINO IMG/duck.gif';
 
   setTimeout(() => {
-    dino.src = 'DINO IMG/dinosaur-dancing-with-sunglass.gif';
+    dino.src = './DINO IMG/dinosaur-dancing-with-sunglass.gif';
     isDucking = false;
   }, 1000);
 }
@@ -85,8 +85,8 @@ function createObstacle() {
   } else {
     // Spawn a samurai
     const selectedCactus = cactusTypes[Math.floor(Math.random([{ src: 'DINO IMG/ezgif-4-5d3febca02.gif', probability: 0.6 },
-      { src: 'DINO IMG/ezgif-4-1f82bc2457.gif', probability: 0.3 },
-      { src: 'DINO IMG/ragna-bloodedge.gif', probability: 0.2 }]))];
+      { src: './DINO IMG/ezgif-4-1f82bc2457.gif', probability: 0.3 },
+      { src: './DINO IMG/ragna-bloodedge.gif', probability: 0.2 }]))];
     obstacle = document.createElement('img');
     obstacle.src = selectedCactus.src;
     obstacle.classList.add('cactus');
@@ -128,7 +128,7 @@ function detectCollision() {
 // Show Game Over Screen
 function gameOverScreen() {
   cactusContainer.innerHTML = '';
-  dino.src = 'DINO IMG/dead.gif';
+  dino.src = './DINO IMG/dead.gif';
   gameOver.style.display = 'block';
   restartBtn.style.display='block';
   gameRunning = false;
@@ -151,7 +151,7 @@ restartBtn.addEventListener('click', () => {
   score = 0;
   spawnInterval = 2000; 
   gameRunning = true;
-  dino.src = 'DINO IMG/dinosaur-dancing-with-sunglass.gif';
+  dino.src = './DINO IMG/dinosaur-dancing-with-sunglass.gif';
   gameOver.style.display = 'none';
   cactusContainer.innerHTML = '';
   lastbird = false;
