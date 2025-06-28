@@ -36,14 +36,14 @@ function jump() {
 
   velocity = jumpPower; 
   let position = parseInt(getComputedStyle(dino).bottom);
-  let peakReached = false;
+  let top = false;
 
   const jumpInterval = setInterval(() => {
-    if (velocity <= 0 && !peakReached) {
-      peakReached = true;
+    if (velocity <= 0 && !top) {
+      top = true;
     }
 
-    const currentGravity = peakReached
+    const currentGravity = top
       ? gravity * (isMobile ? 1.05 : 1.2)
       : gravity;
 

@@ -16,12 +16,11 @@ body {
     padding: 2vh;
 }
 
-/* Responsive game container */
 .game-container {
     position: relative;
     width: 95vw;
-    height: 35vh; /* Base height for mobile */
-    max-height: 60vh; /* Maximum height for desktop */
+    height: 35vh; 
+    max-height: 60vh;
     border: 0.3vh solid #444;
     overflow: hidden;
     background-image: url("DINO IMG/sky.png");
@@ -53,7 +52,6 @@ body {
     }
 }
 
-/* Obstacle Container */
 #samurai-container {
     position: absolute;
     bottom: 1vh;
@@ -64,7 +62,7 @@ body {
     z-index: 5;
 }
 
-/* Score Display */
+
 #score {
     position: absolute;
     top: 1vh;
@@ -80,7 +78,6 @@ body {
     border-radius: 2vh;
 }
 
-/* Player Character */
 #dino {
     position: absolute;
     bottom: 1vh;
@@ -96,7 +93,7 @@ body {
     image-rendering: pixelated;
 }
 
-/* Obstacles */
+
 .samurai {
     position: absolute;
     bottom: 1vh;
@@ -119,7 +116,7 @@ body {
     image-rendering: pixelated;
 }
 
-/* Game Over Screen */
+
 #game-over {
     position: absolute;
     top: 50%;
@@ -131,7 +128,7 @@ body {
     padding: 3vh;
     border-radius: 1vh;
     color: white;
-    z-index: 30; /* Higher than mobile controls */
+    z-index: 30; 
     width: 80%;
     max-width: 400px;
 }
@@ -148,7 +145,6 @@ body {
     gap: 2vh;
 }
 
-/* Game Over Buttons */
 #restart-btn {
     background: #ff5555;
     border: none;
@@ -179,7 +175,7 @@ body {
     transform: scale(0.95);
 }
 
-/* Ground Animation */
+
 @keyframes moveGround {
     from { background-position-x: 0; }
     to { background-position-x: 100%; }
@@ -200,7 +196,6 @@ body {
     animation-play-state: paused;
 }
 
-/* Obstacle Animations */
 .moving-obstacle {
     animation: moveObstacle 3s linear forwards;
 }
@@ -214,7 +209,6 @@ body {
     }
 }
 
-/* Mobile Controls */
 .mobile-controls {
     position: fixed;
     bottom: 20px;
@@ -222,7 +216,7 @@ body {
     right: 0;
     display: flex;
     justify-content: space-around;
-    z-index: 20; /* Lower than game-over */
+    z-index: 20; 
     display: none;
 }
 
@@ -260,7 +254,6 @@ body {
     }
 }
 
-/* Responsive adjustments */
 @media (orientation: landscape) {
     .game-container {
         height: 60vh;
