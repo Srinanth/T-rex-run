@@ -3,37 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dino Game</title>
+  <title>Samurai Runner Game</title>
   <link rel="stylesheet" href="dino.css">
 </head>
 <body>
   <div class="game-container">
-    <div id="score">Score: 0</div>
-    <img id="dino" src="DINO IMG/dinosaur-dancing-with-sunglass.gif" alt="Dino">
-    <div id="cactus-container"></div>
+    <div id="score">Player: 0</div>
+    <img id="dino" src="DINO IMG/dinosaur-dancing-with-sunglass.gif" alt="Dino Runner">
+    <div id="samurai-container"></div>
     <div id="ground"></div>
+    
     <div id="game-over">
-      
-      <button id="restart-btn" style="display: none;">
-        <img src="DINO IMG/ezgif-2-1b9f7f9c43.gif" alt="RESTART" id="resartg">
-      </button>
-    </div>
-   
+      <div id="game-over-content">
+        <h2>GAME OVER</h2>
+        <p>Final Score: <span id="final-score">0</span></p>
+        <button id="restart-btn">Restart</button>
+        <button id="leaderboardButton">View Leaderboard</button>
+      </div>
   </div>
-  <button id="leaderboardButton" onclick="window.location.href = 'board.html';">View Leaderboard</button>
+      <div class="mobile-controls">
+        <button id="jumpBtn" class="mobile-btn">↑</button>
+        <button id="duckBtn" class="mobile-btn">↓</button>
+      </div>
+    </div>
   <script src="dino.js"></script>
   <script>
-  /*
-    function showLeaderboardButton() {
-        document.getElementById('leaderboardButton').style.display = 'block';
-    }
-
     document.getElementById('leaderboardButton').addEventListener('click', function() {
-        window.location.href = 'board.html'; 
+      window.location.href = 'board.html';
     });
-    */
-
-</script>
+  </script>
 </body>
 </html>
-
